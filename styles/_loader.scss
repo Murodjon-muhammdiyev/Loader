@@ -1,0 +1,108 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+
+    &__box {
+        border: 2px solid teal;
+        width: 90px;
+        height: 90px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2px;
+        padding: 2px;
+    }
+    &__item {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        &:first-child {
+            background-color: orange;
+            animation: orange 8s linear 0.6s infinite;
+        }
+        &:nth-child(2n) {
+            background-color: olive;
+            animation: olive 8s linear infinite;
+        }
+        &:last-child {
+            background-color: purple;
+            animation: purple 8s linear 1.2s infinite;
+        }
+    }
+}
+
+@keyframes olive {
+    0% {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+    25% {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+    50% {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+    75% {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+    100% {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+}
+
+@keyframes orange {
+    0% {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+    25% {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+    50% {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+    75% {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+    100% {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+}
+
+@keyframes purple {
+    0% {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+    25% {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+    50% {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+    75% {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+    100% {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+}
